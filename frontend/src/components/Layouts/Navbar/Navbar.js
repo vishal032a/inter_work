@@ -1,13 +1,15 @@
 import './navstyle.css'
 import React from 'react'
 import {Link} from 'react-router-dom'
-const Nav2 = () => {
+import logo from '../../Login/logo.png'
+
+const Navbar = () => {
   return (
     <>
-      <nav>
+      <nav className='nav'>
         <div>
             <ul className='navbar'>
-                <li>logo</li>
+                <li><img src={logo} alt='logo' style={{width:"45px"}}/></li>
                 <li>Categories</li>
                 <li><Link to='/Deals'>Deals</Link></li>
                 <li><Link to='/Whats'>What's new</Link></li>
@@ -21,7 +23,6 @@ const Nav2 = () => {
         <div>
             <ul className='navbar'>
                 <li><Link to='/login'>Login</Link></li>
-                <li><Link to='/signup'>Signup</Link></li>
             </ul>
         </div>
       </nav>
@@ -29,4 +30,4 @@ const Nav2 = () => {
   )
 }
 
-export default Nav2;
+export default Navbar;
