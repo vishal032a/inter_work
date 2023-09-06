@@ -11,6 +11,7 @@ const Navbar = () => {
         <div>
             <ul className='navbar'>
                 <li><img src={logo} alt='logo' style={{width:"45px"}}/></li>
+                <li><Link to='/'>Home</Link></li>
                 <li className="dropdown">
                    Categories
                   <ul className="dropdown-content">

@@ -4,6 +4,7 @@ import ProductDetailPage from "./components/Pages/ProductDetailPage/ProductDetai
 import Homepage from "./components/Pages/HomePage/Homepage";
 import Login from "./components/Pages/Login/Login";
 import Signup from './components/Pages/Signup/Signup'
+import Cart from "./components/Pages/Cart/Cart";
 // import Homepage from "./components/Pages/HomePage/Homepage";
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         <Route path="/product_details" exact element={<ProductDetailPage />} />
         <Route path="/whats" exact element={<h1>this is what's new section</h1>} />
         <Route path="/categories" exact element={<h1>this is categories section</h1>} />
-        <Route path="/cart" exact element={<h1>this is cart section</h1>} />
+        <Route path="/cart" exact element={<Cart/>} />
         <Route path="/profile" exact element={<h1>this is profile section</h1>} />
+        
         {/* Add more routes as needed */}
       </Routes>
     </>

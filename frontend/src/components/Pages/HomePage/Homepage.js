@@ -1,8 +1,6 @@
 import React from 'react'
 import Navbar from '../../Layouts/Navbar/Navbar'
 import {Link} from "react-router-dom";
-// import Login from '../../Login/Login';
-// import Signup from '../../Signup/Signup'
 import ProductCard from '../../Layouts/Cards/ProductCard';
 import { Grid, Paper } from '@mui/material';
 import shirt from '../../Layouts/Cards/t_shirt.png'
@@ -11,8 +9,6 @@ import Footer from '../../Layouts/Footer/Footer'
 
 import data from '../data'
 const Homepage = () => {
-    // const location = useLocation();
-    // const isLoginPagesOrSignup = location.pathname === "/login" || location.pathname === "/signup"
   return (
     <>
     <Navbar/>
@@ -30,7 +26,7 @@ const Homepage = () => {
          ))} 
         </Grid>
         </div>
-    <Footer/>
+    <Footer bgcol="" textcol="white"/>
 
     </>
   )
