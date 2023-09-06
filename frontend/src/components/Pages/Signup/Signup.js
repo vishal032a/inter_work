@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import {Link} from 'react-router-dom'
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import {API} from '../../../service/api'
 // import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import logo from './logo.png'
 
@@ -16,20 +17,19 @@ const theme = createTheme();
 const signupinitialData = {
   name:'',
   email:'',
-  mobile_no:'',
-  password:'',
-  confirm_password:''
+  password:''
 }
 
-function Login() {
+function Signup() {
   const [signupdata,setSignupdata] = useState(signupinitialData);
 
   const onInputChange = (e)=>{
     setSignupdata({...signupdata,[e.target.name]:e.target.value})
   }
 
-  const signupUser = ()=>{
-
+  const signupUser = async()=>{
+    let response = await API.userSignup(signupdata);
+    console.log(response);
   }
 
   return (
@@ -128,7 +128,7 @@ function Login() {
               name="email"
               onChange={(e)=>onInputChange(e)}
             />
-            <TextField
+            {/* <TextField
               label="Mobile"
               sx={{ margin: "2% 0% 5% 0%", width: "84%" }}
               margin="normal"
@@ -136,7 +136,7 @@ function Login() {
               variant="outlined"
               name="mobile_no"
               onChange={(e)=>onInputChange(e)}
-            />
+            /> */}
             <TextField
               label="Password"
               sx={{ margin: "2% 0% 5% 0%", width: "84%" }}
@@ -147,7 +147,7 @@ function Login() {
               name="password"
               onChange={(e)=>onInputChange(e)}
             />
-            <TextField
+            {/* <TextField
               label="Confirm Password"
               sx={{ margin: "2% 0% 5% 0%", width: "84%" }}
               margin="normal"
@@ -156,7 +156,7 @@ function Login() {
               variant="outlined"
               name="confirm_password"
               onChange={(e)=>onInputChange(e)}
-            />
+            /> */}
 
 
             <Button
@@ -198,4 +198,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;

@@ -1,12 +1,13 @@
 import axios from 'axios';
-import { API_NOTIFICATIOION_MESSAGES } from '../constants/config';
-const API_URL = 'http://localhost:8000';
+import { API_NOTIFICATIOION_MESSAGES,SERVICE_URLS} from '../constants/config';
+const API_URL = 'http://localhost:8080';
 
 const axiosInstance = axios.create({
     baseURL:API_URL,
     timeout:10000,
     headers:{
-        "Content-Type":"application/json"
+        "Content-Type":"application/json",
+        "x-api-key":"token"
     }
 })
 
@@ -76,6 +77,27 @@ const processError = (error)=>{
     }
 }
 
-export const SERVICE_URLS = {
-    userSignup:{url:'/signup',method:'POST'}
+const API = {};
+for(const[key,value] of Object.entries(SERVICE_URLS)){
+    API[key] = (body,showUploadProgress,showDownloadProgress)=>
+    axiosInstance({
+        method:value.method,
+        url:value.url,
+        data:body,
+        responseType:value.responseType,
+        onUploadProgress: function(progressEvent){
+            if(showUploadProgress){
+                let percentageCompleted = Math.round((progressEvent.loaded*100)/progressEvent.total)
+                showUploadProgress(percentageCompleted);
+            }
+        },
+        ondownloadProgress: function(progressEvent){
+            if(showUploadProgress){
+                let percentageCompleted = Math.round((progressEvent.loaded*100)/progressEvent.total)
+                showDownloadProgress(percentageCompleted);
+            }
+        }
+    })
 }
+
+export {API};

@@ -1,19 +1,23 @@
 import "./App.css";
-import Nav2 from "./components/Layouts/Navbar/Navbar"
-import {Routes,Route,Outlet,useLocation } from "react-router-dom";
-import Login from "./components/Login/Login";
-import Signup from './components/Signup/Signup'
+import { Route, Routes} from 'react-router-dom';
+import ProductDetailPage from "./components/Pages/ProductDetailPage/ProductDetailPage";
+import Homepage from "./components/Pages/HomePage/Homepage";
+import Login from "./components/Pages/Login/Login";
+import Signup from './components/Pages/Signup/Signup'
+// import Homepage from "./components/Pages/HomePage/Homepage";
 function App() {
-  const location = useLocation();
-  const isLoginPageOrSignup = location.pathname === "/login" || location.pathname === "/signup";
   return (
     <>
-      {/* Render Nav2 only if it's not the login or signup page */}
-      {!isLoginPageOrSignup && <Nav2 />}
-      <Outlet /> {/* Outlet to render nested routes */}
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/" exact element={<Homepage />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/signup" exact element={<Signup />} />
+        <Route path="/product_details" exact element={<ProductDetailPage />} />
+        <Route path="/whats" exact element={<h1>this is what's new section</h1>} />
+        <Route path="/categories" exact element={<h1>this is categories section</h1>} />
+        <Route path="/cart" exact element={<h1>this is cart section</h1>} />
+        <Route path="/profile" exact element={<h1>this is profile section</h1>} />
+        {/* Add more routes as needed */}
       </Routes>
     </>
   );
