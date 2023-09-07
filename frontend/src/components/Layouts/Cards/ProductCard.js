@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import ShareIcon from "@mui/icons-material/Share";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Paper } from "@mui/material";
+import Prices from "../Prices/Prices";
 
 const ProductCard = ({ image, title, description, price }) => {
   return (
@@ -29,29 +30,49 @@ const ProductCard = ({ image, title, description, price }) => {
         }}
       >
         <Paper elevation={2} style={{ borderRadius: "100%" }}>
-          <IconButton aria-label="share" size="small" width='5%' aspectRatio='1:1'>
+          <IconButton
+            aria-label="share"
+            size="small"
+            width="5%"
+            aspectRatio="1:1"
+          >
             <ShareIcon />
           </IconButton>
         </Paper>
-        <Paper elevation={2} style={{ borderRadius: "100%" , marginTop:'4%', backgroundColor:'#F5F5F5'}}>
+        <Paper
+          elevation={2}
+          style={{
+            borderRadius: "100%",
+            marginTop: "4%",
+            backgroundColor: "#F5F5F5",
+          }}
+        >
           <IconButton
             aria-label="add to wishlist"
             size="small"
-            width='5%' aspectRatio='1:1'
+            width="5%"
+            aspectRatio="1:1"
           >
             <FavoriteIcon />
           </IconButton>
         </Paper>
       </div>
 
-      <CardContent style={{ marginTop: "-35%" ,marginBottom:'0%'}}>
+      <CardContent style={{ marginTop: "-35%", marginBottom: "0%" }}>
         <Typography variant="subtitle1" component="div">
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary" paragraph style={{fontSize:'13'}}>
-          {description.substring(0,40)+'...'}
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          paragraph
+          style={{ fontSize: "13" }}
+        >
+          {description.substring(0, 40) + "..."}
         </Typography>
-        <Typography variant="subtitle2" style={{marginTop:"-3%", marginBottom:'0%'}} >Price: ${price}</Typography>
+        {/* <Typography variant="subtitle2" style={{marginTop:"-3%", marginBottom:'0%'}} >Price: ${price}</Typography> */}
+
+        <Prices price="40" original_price="400" discount="90%" />
       </CardContent>
     </Card>
   );

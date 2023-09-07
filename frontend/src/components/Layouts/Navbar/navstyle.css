@@ -63,6 +63,7 @@ nav {
 .dropdown {
   position: relative;
   display: inline-block;
+  color: #551A8B;
 }
 
 .dropdown-content {

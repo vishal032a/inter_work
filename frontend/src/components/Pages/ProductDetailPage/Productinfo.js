@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Typography,Button} from '@mui/material'
 import profile from './profile2.png'
+// import Prices from '../../Layouts/Prices/Prices';
 const Productinfo = () => {
     const colorOptions = [
         { color: 'red' },
@@ -30,6 +31,9 @@ const Productinfo = () => {
                   <Typography variant='subtitle2' style={{marginLeft:'4%'}}>Designed by Artist</Typography>
                 </div>
                 <Typography variant="h6" color="initial" style={{fontWeight:'600',margin:'5%'}}>Rs 205</Typography>
+                <div>
+                  {/* <Prices price='40' original_price='400' discount='90%'/> */}
+                </div>
                 <Typography variant="h6" color="initial">Color</Typography>
                 <div>
                 {colorOptions.map((option, index) => (

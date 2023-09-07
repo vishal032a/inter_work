@@ -15,7 +15,7 @@ import logo from './logo.png'
 const theme = createTheme();
 
 const signupinitialData = {
-  name:'',
+  username:'',
   email:'',
   password:''
 }
@@ -28,6 +28,7 @@ function Signup() {
   }
 
   const signupUser = async()=>{
+    console.log(signupdata)
     let response = await API.userSignup(signupdata);
     console.log(response);
   }
@@ -111,12 +112,12 @@ function Signup() {
 
 
             <TextField
-              label="Name"
+              label="Userame"
               sx={{ margin: "2% 0% 5% 0%", width: "84%" }}
               margin="normal"
               size="small"
               variant="outlined"
-              name="name"
+              name="username"
               onChange={(e)=>onInputChange(e)}
             />
             <TextField

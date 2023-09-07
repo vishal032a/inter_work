@@ -16,7 +16,7 @@ const Homepage = () => {
         <div style={{maxWidth:'100%',marginLeft:'4%',marginRight:'4%'}}>
         <Grid container spacing={1}>
         {data.map((val, index) => (
-          <Grid item xs={3} md={2} key={index}>
+          <Grid item xs={4} md={2} key={index}>
             <Paper>
               <Link to='/product_details'>
                 <ProductCard image={shirt} title={val.title} description={val.description} price={val.price} />
