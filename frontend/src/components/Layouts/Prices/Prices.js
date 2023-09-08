@@ -1,21 +1,47 @@
-import React from 'react'
-import {Grid, Typography } from '@mui/material';
-const Prices = ({price,original_price,discount}) => {
-    return (
-        <Grid container spacing={1}>
-          <Grid item xs={4} style={{marginRight:'2%'}}>
-            <Typography variant="body1" style={{paddingTop:'30%',fontWeight:'bold'}} >Rs.{price}/-</Typography>
-          </Grid>
-          <Typography variant="caption" style={{ paddingTop:'12%',textDecoration: 'line-through',margin:'2%'}}>
-           Rs.{original_price}/-
+import React from "react";
+import { Grid, Typography,Paper } from "@mui/material";
+const Prices = ({ price, original_price, discount,circleRadius }) => {
+  return (
+    <Grid
+      container
+      direction="row"
+      justifyContent="space-around"
+      alignItems="center"
+    >
+      <Grid item xs={3} >
+        <Typography
+          variant="body1"
+          fontWeight={500}
+        >
+          Rs.{price}/-
+        </Typography>
+      </Grid>
+      <Grid item xs={3}>
+      <Typography
+        variant="caption"
+        style={{
+          textDecoration: "line-through",
+        }}
+      >
+        Rs.{original_price}/-
+      </Typography>
+      </Grid>
+      <Grid item xs={4}>
+      <Paper elevation={3} style={{backgroundColor:'#000',width:{circleRadius},height:{circleRadius},borderRadius:{circleRadius},padding:'2%'}}>
+          <Typography
+            variant="body2"
+            fontWeight={400}
+            style={{
+              textAlign:'center',
+              color: "white",
+            }}
+          >
+            {discount} OFF
           </Typography>
-          <Grid item xs={4}>
-            <div style={{backgroundColor:'#AD930A',borderRadius:'50%'}}>
-              <Typography variant="body2" style={{paddingTop:'8%',paddingLeft:'20%',paddingRight:'5%',fontWeight:'bold',color:'white'}} >{discount} OFF</Typography>
-            </div>
-          </Grid>
-        </Grid>
-      );
-}
+          </Paper>
+      </Grid>
+    </Grid>
+  );
+};
 
-export default Prices
+export default Prices;

@@ -12,7 +12,7 @@ import Footer from "../../Layouts/Footer/Footer";
 
 export default function ProductDetailPage() {
   return (
-    <div style={{width:'100%',paddingRight:'0'}} >
+    <div style={{maxWidth: '100%', overflowX: 'hidden'}} >
     <Navbar/>
     <div style={{ backgroundColor: "white" }}>
       <Grid
@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
       {
         <Grid container spacing={1} style={{marginLeft:'3%',marginTop:'2%'}}>
           {data.map((val) => (
-            <Grid item md="2" key={val.title}>
+            <Grid item sx={4} md={2} key={val.title}>
               <Paper>
                 <ProductCard image={tshirt} title={val.title} description={val.description} price={val.price} />
               </Paper>

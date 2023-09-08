@@ -1,12 +1,12 @@
 import React from 'react';
-import { Grid, Card, CardContent, Typography, CardMedia} from '@mui/material';
+import { Grid, Typography} from '@mui/material';
 import Navbar from '../../Layouts/Navbar/Navbar';
 import './Cart.css'
 import Footer from '../../Layouts/Footer/Footer';
 import t_shirt from './t_shirt.png'
 const products = [
-  { id: 1, image:t_shirt , name: 'Product 1', price: 10 , quantity: 2 },
-  { id: 2, image:t_shirt , name: 'Product 2', price: 15 , quantity: 1 },
+  { id: 1, image:t_shirt , name: 'Game Over Black Man T-shirt ', price: 10 , quantity: 2 },
+  { id: 2, image:t_shirt , name: 'Game Over Black Man T-shirt', price: 15 , quantity: 1 },
   // Add more products here
 ];
 
@@ -28,50 +28,47 @@ const Cart = () => {
   return (
         <div className='cart_section'>
         <Navbar />
-        <div className='content_container'>
-        <Grid container spacing={2} style={{ justifyContent: 'space-between' }}>
+
+        <div style={{}}>
+        <Grid container spacing={2} style={{ display:'flex'}}>
+          <Grid item>
+            <Grid container>
             {products.map((product) => (
             <Grid item xs={12} md={6} key={product.id} style={{ margin: '2%' }}>
-                <Card style={{ display: 'flex' }}>
-                <CardMedia>
-                  <img src={product.image} alt="tshirt" style={{width:'40%'}} />
-                </CardMedia>
-                <CardContent>
-                  <div>
-                    <Typography variant="h6">Product: {product.name}</Typography>
-                    <Typography>Price: ${product.price}</Typography>
-                    <Typography>Quantity: {product.quantity}</Typography>
-                    {/* You can add more details here */}
-                  </div>
-                </CardContent>
-              </Card>
+              <div style={{display:'flex', boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',borderRadius:'10px'}}>
+                <img src={product.image} alt="pro_img" style={{width:'30%'}}/>
+                <div style={{margin:'8%'}}>
+                  <Typography variant='h6' >{product.name}</Typography>
+                  <Typography variant='subtitle2' > price: {product.price}</Typography>
+                  <Typography variant='subtitle2' >quantity: {product.quantity}</Typography>
+                </div>
+              </div>
             </Grid>
             ))}
-        </Grid>
+            </Grid>
+          </Grid>
+        </Grid> 
 
         {/* Summary */}
         <Grid
             item
-            xs={12}
-            md={3}
+            xs={8}
+            md={6}
             style={{
             marginTop: '10%',
-            position: 'absolute',
             right:'2%', // Position on the right side
             top: 0, // Align with the top
             }}
         >
-            <Card>
-            <CardContent>
+            <div>
                 <Typography variant="h6">Summary</Typography>
                 <Typography>Total Items: {totalItems}</Typography>
                 <Typography>Total Amount: ${totalAmount}</Typography>
-                {/* Add more summary items like discounts, taxes, etc. */}
                 <Typography>Total Payable Amount: ${totalAmount}</Typography>
-            </CardContent>
-            </Card>
+            </div>
         </Grid>
         </div>
+
         <Footer bgcol="white" textcol="black" />
         </div>
   );
