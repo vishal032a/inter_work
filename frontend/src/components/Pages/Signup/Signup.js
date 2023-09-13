@@ -6,13 +6,16 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {API} from '../../../service/api'
 // import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import logo from './logo.png'
 
+
 const theme = createTheme();
+
+
 
 const signupinitialData = {
   username:'',
@@ -21,16 +24,20 @@ const signupinitialData = {
 }
 
 function Signup() {
-  const [signupdata,setSignupdata] = useState(signupinitialData);
 
+  const [signupdata,setSignupdata] = useState(signupinitialData);
+  const navigate = useNavigate();
   const onInputChange = (e)=>{
     setSignupdata({...signupdata,[e.target.name]:e.target.value})
   }
 
   const signupUser = async()=>{
-    console.log(signupdata)
     let response = await API.userSignup(signupdata);
-    console.log(response);
+    if(response.isSuccess){
+      alert("user created succesfully");
+      navigate('/login');
+    }
+    console.log(response.data);
   }
 
   return (

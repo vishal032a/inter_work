@@ -18,7 +18,7 @@ const Homepage = () => {
         {data.map((val, index) => (
           <Grid item xs={4} md={2} key={index}>
             <Paper>
-              <Link to='/product_details'>
+              <Link to='/product_details' style={{textDecoration:'none'}}>
                 <ProductCard image={shirt} title={val.title} description={val.description} price={val.price} />
               </Link>
             </Paper>

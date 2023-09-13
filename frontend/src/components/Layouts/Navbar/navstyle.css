@@ -3,7 +3,7 @@
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background-color: white;
   padding: 0px 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
@@ -28,14 +28,13 @@ nav {
 }
 .search {
   width: 100%;
-  max-width: 300px;
-  margin-left: -125%;
-  padding: 6% 119%;
+  /* margin-left: -125%; */
+  padding: 6% 30%;
   border: 2px solid black;
   border-radius: 28px;
 }
 .nav{
-  height: 5%;
+  height: 70px;
 }
 /* Responsive styles */
 @media screen and (max-width: 768px) {

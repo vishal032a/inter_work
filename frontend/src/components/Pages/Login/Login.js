@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Paper, Typography, TextField, Button, Grid } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { API } from "../../../service/api";
 // import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import logo from "./logo.png";
 
@@ -14,10 +15,22 @@ const loginInitialValues = {
 
 function Login() {
   const [logindata, setLogindata] = useState(loginInitialValues);
+  const navigate = useNavigate();
 
   const onInputChange = (e) => {
     setLogindata({ ...logindata, [e.target.name]: e.target.value });
   };
+
+  const handleLogin = async()=>{
+    console.log(logindata);
+    let response = await API.LoginApi(logindata);
+    console.log(response.data.data);
+    if(response.isSuccess){
+      localStorage.setItem("id", response.data.data[0]._id);
+      localStorage.setItem("username", response.data.data[0].username);
+      navigate("/");
+    }
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -125,6 +138,7 @@ function Login() {
             <Button
               variant="contained"
               sx={{ margin: "2% 0% 15% 0%", width: "60%" }}
+              onClick={()=>handleLogin()}
             >
               Log In
             </Button>
