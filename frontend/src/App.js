@@ -5,7 +5,7 @@ import Homepage from "./components/Pages/HomePage/Homepage";
 import Login from "./components/Pages/Login/Login";
 import Signup from './components/Pages/Signup/Signup'
 import Cart from "./components/Pages/Cart/Cart";
-import Cart2 from "./components/Pages/Cart/Cart2";
+import Orders from "./components/Pages/Orders/Orders";
 // import Homepage from "./components/Pages/HomePage/Homepage";
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path="/categories" exact element={<h1>this is categories section</h1>} />
         <Route path="/cart" exact element={<Cart/>} />
         <Route path="/profile" exact element={<h1>this is profile section</h1>} />
-        <Route path="/test" exact element={<test/>} />
+        <Route path="/test" exact element={<Orders/>} />
         {/* Add more routes as needed */}
       </Routes>
     </>
