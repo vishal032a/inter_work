@@ -40,7 +40,7 @@ const Cart = () => {
               {products.map((product) => (
                 <Grid item xs={12} key={product.id} style={{ margin: '2%' }}>
 
-                  <div style={{ display: 'flex', boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', borderRadius: '10px',}}>
+                  <div style={{ display: 'flex', boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.45)', borderRadius: '10px',}}>
                     <div style={{maxWidth:'200px'}}>
                       <img src={product.image} alt="pro_img" style={{width:'100%'}}/>
                     </div>

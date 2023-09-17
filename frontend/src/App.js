@@ -8,6 +8,7 @@ import Cart from "./components/Pages/Cart/Cart";
 import Orders from "./components/Pages/Orders/Orders";
 import DesignerProfile from "./components/Pages/Profile/DesignerProfile";
 import UserProfile from './components/Pages/Profile/UserProfile'
+import ErrorPage from "./components/Pages/Error.js/ErrorPage";
 // import Homepage from "./components/Pages/HomePage/Homepage";
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/orders" exact element={<Orders/>} />
         <Route path="/userProfile" exact element={<UserProfile/>} />
         <Route path="/test" exact element={<DesignerProfile/>} />
+        <Route path="/error" exact element={<ErrorPage/>} />
         {/* Add more routes as needed */}
       </Routes>
     </>
