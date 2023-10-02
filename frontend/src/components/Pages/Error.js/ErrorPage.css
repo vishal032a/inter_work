@@ -109,7 +109,7 @@
         position: relative;
         top: 8%;
         color: white;
-        background: #07B3F9;
+        background: #4C223A;
         border-radius: 50%;
         display: inline-block;
         transform: skew(45deg);
@@ -140,7 +140,7 @@
         z-index: 9999;
         display: block;
         background: #535353;
-        color: #A2A2A2;
+        color: #fff;
         border-radius: 50%;
         font-style: italic;
     }

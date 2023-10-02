@@ -68,7 +68,8 @@ class ErrorPage extends Component {
                 </div>
               </div>
               <div className="msg">
-                OH!<span className="triangle"></span>
+                <span style={{marginLeft:'10%'}}>OH!</span>
+               <span className="triangle"></span>
               </div>
             </div>
             <h2 className="h1">Sorry! Page not found</h2>

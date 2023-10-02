@@ -22,7 +22,7 @@ const ProductCard = ({ image, title, description, price }) => {
       <div
         style={{
           position: "relative",
-          top: "-220px", // Adjust the top position as needed
+          top: "-205px", // Adjust the top position as needed
           right: "10px", // Adjust the right position as needed
           display: "flex",
           flexDirection: "column",

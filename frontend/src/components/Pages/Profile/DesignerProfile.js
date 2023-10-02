@@ -12,6 +12,8 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 
 
@@ -25,6 +27,7 @@ const DesignerProfile = () => {
           <Paper style={{ textAlign: 'center' }}>
             <div style={{padding: '20px'}}>
               <img src={profilePhoto} alt='profile_image' style={{borderRadius:'50%',marginTop:'10px',marginBottom:'10px'}}/>
+              <Typography varient="subtitle2" style={{color:'#A24D50'}} > 300 followers</Typography>
               <Typography varient="subtitle2" style={{color:'#A24D50'}} > 30 following</Typography>
               <Typography variant="h5" fontWeight={700} style={{ }}>Vishal Kumar</Typography>
               <Typography variant="subtitle2" fontWeight={700} style={{marginTop:'5px',marginBottom:'5px'}}>vk7821188@gmail.com</Typography>
@@ -62,12 +65,29 @@ const DesignerProfile = () => {
                 <Box style={{borderTop:'1px solid lightgray'}}>
                   <Typography variant="subtitle1" style={{textAlign:'left',marginTop:'6px',marginBottom:'6px',marginLeft:'6px'}} ><AccountCircleIcon style={{fontSize:'20px',marginBottom:'-4px',marginRight:'4px'}}/> Portfolio</Typography>
                 </Box>
+                
+
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  borderRadius={8} // Add rounded corners
+                  marginTop={10}
+                  marginBottom={10}
+                >
+                  <InstagramIcon fontSize="large" style={{ marginRight: '16px', color: '#E1306C' }} />
+                  <FacebookIcon fontSize="large" style={{ color: '#1877F2'}} />
+                </Box>
+
+                <Box >
+                  <Typography style={{paddingBottom:'5%'}}>Copyright@eye_eye_tee</Typography>
+                </Box>
             </div>
           </Paper>
         </Grid>
 
         <Grid item xs={3} sm={3} md={3} style={{}}>
-            <Card image={sell} name={"Sell Your Art"}/>
+            <Card image={sell} name={"See Your Art"}/>
         </Grid>
 
         <Grid item xs={3} sm={3} md={3}>

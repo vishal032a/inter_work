@@ -26,7 +26,7 @@ const  NavIcons= () => {
             <ShoppingCart color='black' />
           </IconButton>
         </Link>
-        <Link to="/profile">
+        <Link to="/userProfile">
           <IconButton>
             <AccountCircle style={{ color: 'black', marginRight: '12px' }} />
           </IconButton>

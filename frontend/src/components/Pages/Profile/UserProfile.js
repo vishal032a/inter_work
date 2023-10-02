@@ -9,6 +9,8 @@ import sell from './SellYourArt.png'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EditIcon from '@mui/icons-material/Edit';
 import DescriptionIcon from '@mui/icons-material/Description';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 
 
@@ -43,6 +45,22 @@ const DesignerProfile = () => {
                 <Box style={{marginTop:'30px',borderTop:'1px solid lightgray',borderBottom:'1px solid lightgray'}}>
                   <Typography variant="subtitle1" style={{textAlign:'left',marginTop:'6px',marginBottom:'6px',marginLeft:'6px'}} ><DescriptionIcon style={{fontSize:'20px',marginBottom:'-4px',marginRight:'4px'}}/>
  Terms and Conditions</Typography>
+                </Box>
+
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  borderRadius={8} // Add rounded corners
+                  marginTop={10}
+                  marginBottom={10}
+                >
+                  <InstagramIcon fontSize="large" style={{ marginRight: '16px', color: '#E1306C' }} />
+                  <FacebookIcon fontSize="large" style={{ color: '#1877F2'}} />
+                </Box>
+
+                <Box >
+                  <Typography style={{paddingBottom:'5%'}}>Copyright@eye_eye_tee</Typography>
                 </Box>
             </div>
           </Paper>
