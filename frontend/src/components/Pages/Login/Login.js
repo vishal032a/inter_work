@@ -26,6 +26,7 @@ function Login() {
     let response = await API.LoginApi(logindata);
     console.log(response.data.data);
     if(response.isSuccess){
+      console.log(response);
       localStorage.setItem("id", response.data.data[0]._id);
       localStorage.setItem("username", response.data.data[0].username);
       navigate("/");
@@ -172,7 +173,7 @@ function Login() {
                   fontWeight: "600",
                 }}
               >
-                Sign Up Here
+                Sign Up
               </Link>
             </Grid>
             <Grid item>

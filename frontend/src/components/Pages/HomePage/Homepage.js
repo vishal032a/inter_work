@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../Layouts/Navbar/Navbar'
+// import Navbar from '../../Layouts/Navbar/Navbar'
 import {Link} from "react-router-dom";
 import ProductCard from '../../Layouts/Cards/ProductCard';
 import { Grid, Paper } from '@mui/material';
@@ -8,10 +8,11 @@ import Banner from '../../Layouts/Banner/Banner'
 import Footer from '../../Layouts/Footer/Footer'
 
 import data from '../data'
+import Nav2 from '../../Layouts/Navbar/Nav2';
 const Homepage = () => {
   return (
     <>
-    <Navbar/>
+    <Nav2/>
     <Banner/>
         <div style={{maxWidth:'100%',marginLeft:'4%',marginRight:'4%'}}>
         <Grid container spacing={1}>

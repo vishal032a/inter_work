@@ -19,8 +19,7 @@ const theme = createTheme();
 
 const signupinitialData = {
   username:'',
-  email:'',
-  password:''
+  email:''
 }
 
 function Signup() {
@@ -32,7 +31,9 @@ function Signup() {
   }
 
   const signupUser = async()=>{
+    console.log(signupdata);
     let response = await API.userSignup(signupdata);
+    console.log(response);
     if(response.isSuccess){
       alert("user created succesfully");
       navigate('/login');
@@ -145,7 +146,7 @@ function Signup() {
               name="mobile_no"
               onChange={(e)=>onInputChange(e)}
             /> */}
-            <TextField
+            {/* <TextField
               label="Password"
               sx={{ margin: "2% 0% 5% 0%", width: "84%" }}
               margin="normal"
@@ -154,7 +155,7 @@ function Signup() {
               variant="outlined"
               name="password"
               onChange={(e)=>onInputChange(e)}
-            />
+            /> */}
             {/* <TextField
               label="Confirm Password"
               sx={{ margin: "2% 0% 5% 0%", width: "84%" }}
@@ -190,7 +191,7 @@ function Signup() {
                 Already have an account?
               </Typography>
               <Link to="/login" variant="body2" style={{ textDecoration: "none",fontSize: "15px",color:"551A8B",fontWeight:"600"}}>
-                Login here
+                Login
               </Link>
             </Grid>
 

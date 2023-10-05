@@ -15,7 +15,7 @@ import logo from "./logo.png";
 import NavIcons from "../NavbarIcons/NavIcons";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Nav2 = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
@@ -129,10 +129,8 @@ const Navbar = () => {
             variant="contained"
             style={{
                 marginRight: "16px",
-                background: 'rgb(162,77,80)',
-                background: 'linear-gradient(90deg, rgba(162,77,80,1) 0%, rgba(162,77,80,1) 50%, rgba(75,28,54,1) 100%)',
-                color: "white",
-                fontWeight:'600'
+                backgroundImage: "linear-gradient(to right, #A24D50, #4B1C36)",
+                color: "white", // Set the text color to white for better contrast
               }}
             component={Link}
             to="/sell" // Replace with the actual link for selling your art
@@ -149,4 +147,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Nav2;

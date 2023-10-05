@@ -23,7 +23,7 @@ const Designer = () => {
         </div>
         <div style={{height:'20vh'}}>
             <div style={{display:'flex',justifyContent:'center'}}>
-                <div style={{backgroundColor:'#fff',height:'40vh',width: '40vh',borderRadius:'50%',marginTop:'-10%',display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{backgroundColor:'#fff',height:'40vh',width: '40vh',borderRadius:'50%',marginTop:'-11%',display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <img src={profilePhoto} alt='pro_photo' style={{borderRadius:'50%',width:'70%'}}/>
                 </div>
             </div>
