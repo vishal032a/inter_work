@@ -5,7 +5,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { API } from "../../../service/api";
 // import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import logo from "./logo.png";
-
 const theme = createTheme();
 
 const loginInitialValues = {
@@ -13,8 +12,19 @@ const loginInitialValues = {
   password: "",
 };
 
+const userdata = {
+  _id:"",
+  addresses:"",
+  email:"",
+  following:"",
+  isDesigner:"",
+  username:""
+}
+
 function Login() {
   const [logindata, setLogindata] = useState(loginInitialValues);
+
+
   const navigate = useNavigate();
 
   const onInputChange = (e) => {
@@ -22,14 +32,28 @@ function Login() {
   };
 
   const handleLogin = async()=>{
-    console.log(logindata);
-    let response = await API.LoginApi(logindata);
-    console.log(response.data.data);
+    const response = await API.LoginApi(logindata);
+    console.log(response.data.status);
     if(response.isSuccess){
-      console.log(response);
-      localStorage.setItem("id", response.data.data[0]._id);
-      localStorage.setItem("username", response.data.data[0].username);
+      // const {_id,addresses,email,following,isDesigner,username} = useData(response.data.data.data);
+      localStorage.setItem("id", response.data.data.data._id);
+      localStorage.setItem("username", response.data.data.data.username);
+
+
+      userdata._id = response.data.data.data._id;
+      userdata.addresses = response.data.data.data.addresses;
+      userdata.email = response.data.data.data.email;
+      userdata.addresses = response.data.data.data.addresses;
+      userdata.addresses = response.data.data.data.addresses;
+      userdata.username = response.data.data.data.username;
+
+      console.log(userdata);
+
       navigate("/");
+
+    }
+    else{
+      alert(response.msg);
     }
   }
 
@@ -188,4 +212,4 @@ function Login() {
   );
 }
 
-export default Login;
+export {Login,userdata};

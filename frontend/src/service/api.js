@@ -36,7 +36,7 @@ axiosInstance.interceptors.response.use(
 // if fail => return(isFailure:true,status string,msg:string,code:int)
 const processResponse = (response)=>{
     if(response?.status===200 || response?.status === 201){
-        return {isSuccess:true,data:response.data}
+        return {isSuccess:true,data:response}
     }
     else{
         return {
@@ -63,7 +63,7 @@ const processError = (error)=>{
         console.log('ERROR IN REQUEST: ',error.toJSON());
         return{
             isError:true,
-            msg:API_NOTIFICATIOION_MESSAGES.requrestFailure,
+            msg:API_NOTIFICATIOION_MESSAGES.requestFailure,
             code:""
         } 
     } else{

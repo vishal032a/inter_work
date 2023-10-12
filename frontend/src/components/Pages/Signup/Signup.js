@@ -31,14 +31,18 @@ function Signup() {
   }
 
   const signupUser = async()=>{
-    console.log(signupdata);
     let response = await API.userSignup(signupdata);
     console.log(response);
     if(response.isSuccess){
-      alert("user created succesfully");
+      if(response.data.status===200)
+      alert("user created successfully  check your email for login credentials");
+      else if(response.data.status===201)
+      alert("user already exist please check your email for login creadentials")
+      else
+      navigate('/error');
+
       navigate('/login');
     }
-    console.log(response.data);
   }
 
   return (
@@ -51,19 +55,6 @@ function Signup() {
         minHeight="100vh"
         columns={12}
       >
-        {/* Back Button
-        <Box position="absolute" top={0} left={0} padding={2}>
-          <Button
-            variant="outlined"
-            color="primary"
-            startIcon={<ArrowBackIcon />}
-            onClick={() => {
-              // Handle the back button click here
-            }}
-          >
-            Back
-          </Button>
-        </Box> */}
         <img src={logo} alt={'logo'} style={{
          width: "20%", // Default width for small screens
          [`@media (minwidth: 400px)`]: {
@@ -137,35 +128,7 @@ function Signup() {
               name="email"
               onChange={(e)=>onInputChange(e)}
             />
-            {/* <TextField
-              label="Mobile"
-              sx={{ margin: "2% 0% 5% 0%", width: "84%" }}
-              margin="normal"
-              size="small"
-              variant="outlined"
-              name="mobile_no"
-              onChange={(e)=>onInputChange(e)}
-            /> */}
-            {/* <TextField
-              label="Password"
-              sx={{ margin: "2% 0% 5% 0%", width: "84%" }}
-              margin="normal"
-              size="small"
-              type="password"
-              variant="outlined"
-              name="password"
-              onChange={(e)=>onInputChange(e)}
-            /> */}
-            {/* <TextField
-              label="Confirm Password"
-              sx={{ margin: "2% 0% 5% 0%", width: "84%" }}
-              margin="normal"
-              size="small"
-              type="password"
-              variant="outlined"
-              name="confirm_password"
-              onChange={(e)=>onInputChange(e)}
-            /> */}
+            
 
 
             <Button
