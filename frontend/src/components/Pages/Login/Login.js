@@ -12,14 +12,14 @@ const loginInitialValues = {
   password: "",
 };
 
-const userdata = {
-  _id:"",
-  addresses:"",
-  email:"",
-  following:"",
-  isDesigner:"",
-  username:""
-}
+// const userdata = {
+//   _id:"",
+//   addresses:"",
+//   email:"",
+//   following:"",
+//   isDesigner:"",
+//   username:""
+// }
 
 function Login() {
   const [logindata, setLogindata] = useState(loginInitialValues);
@@ -36,18 +36,22 @@ function Login() {
     console.log(response.data.status);
     if(response.isSuccess){
       // const {_id,addresses,email,following,isDesigner,username} = useData(response.data.data.data);
-      localStorage.setItem("id", response.data.data.data._id);
+      localStorage.setItem("_id", response.data.data.data._id);
       localStorage.setItem("username", response.data.data.data.username);
+      localStorage.setItem("email", response.data.data.data.email);
+      localStorage.setItem("addresses", response.data.data.data.addresses);
+      localStorage.setItem("isDesigner", response.data.data.data.isDesigner);
+      localStorage.setItem("following", response.data.data.data.following);
 
 
-      userdata._id = response.data.data.data._id;
-      userdata.addresses = response.data.data.data.addresses;
-      userdata.email = response.data.data.data.email;
-      userdata.addresses = response.data.data.data.addresses;
-      userdata.addresses = response.data.data.data.addresses;
-      userdata.username = response.data.data.data.username;
+      // userdata._id = response.data.data.data._id;
+      // userdata.addresses = response.data.data.data.addresses;
+      // userdata.email = response.data.data.data.email;
+      // userdata.addresses = response.data.data.data.addresses;
+      // userdata.addresses = response.data.data.data.addresses;
+      // userdata.username = response.data.data.data.username;
 
-      console.log(userdata);
+      // console.log(userdata);
 
       navigate("/");
 
@@ -212,4 +216,4 @@ function Login() {
   );
 }
 
-export {Login,userdata};
+export default Login;

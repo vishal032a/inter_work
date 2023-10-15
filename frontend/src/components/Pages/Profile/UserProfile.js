@@ -11,10 +11,17 @@ import EditIcon from '@mui/icons-material/Edit';
 import DescriptionIcon from '@mui/icons-material/Description';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import {Link} from 'react-router-dom'
 
 
 
 const DesignerProfile = () => {
+  let username = localStorage.getItem('username')?localStorage.getItem('username'):"";
+  let email = localStorage.getItem('email')?localStorage.getItem('email'):"";
+  let following = localStorage.getItem('following')?localStorage.getItem('following'):"0";
+  let number = localStorage.getItem('number')?localStorage.getItem('number'):'XXXXXXXXXX';
+  let name = localStorage.getItem('name')?localStorage.getItem('name'):'Unknown';
+  let about = localStorage.getItem('about')?localStorage.getItem('about'):'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book';
   return (
     <div style={{ backgroundColor: 'white' }}>
       <Navbar />
@@ -23,21 +30,21 @@ const DesignerProfile = () => {
           <Paper style={{ textAlign: 'center' }}>
             <div style={{padding: '20px'}}>
               <img src={profilePhoto} alt='profile_image' style={{borderRadius:'50%',marginTop:'10px',marginBottom:'10px'}}/>
-              <Typography varient="subtitle2" style={{color:'#A24D50'}} > 30 following</Typography>
-              <Typography variant="h5" fontWeight={700} style={{ }}>Vishal Kumar</Typography>
-              <Typography variant="subtitle2" fontWeight={700} style={{marginTop:'5px',marginBottom:'5px'}}>vk7821188@gmail.com</Typography>
-              <Typography variant="subtitle2" fontWeight={700} style={{marginTop:'5px',marginBottom:'5px'}}>+91 9667462077</Typography>
-              <Typography variant="subtitle2" fontWeight={700} style={{marginTop:'5px',marginBottom:'5px'}}>vishal032a</Typography>
+              <Typography varient="subtitle2" style={{color:'#A24D50'}} > {following} following</Typography>
+              <Typography variant="h5" fontWeight={700} style={{ }}>{name}</Typography>
+              <Typography variant="subtitle2" fontWeight={700} style={{marginTop:'5px',marginBottom:'5px'}}>{email}</Typography>
+              <Typography variant="subtitle2" fontWeight={700} style={{marginTop:'5px',marginBottom:'5px'}}>+91 {number}</Typography>
+              <Typography variant="subtitle2" fontWeight={700} style={{marginTop:'5px',marginBottom:'5px'}}>{username}</Typography>
               <Typography variant="subtitle1" fontWeight={700} style={{marginTop:'5px',marginBottom:'5px', textAlign: 'left'}}>About</Typography>
               <Typography variant="body2" fontWeight={300} style={{marginTop:'5px',marginBottom:'5px', textAlign: 'left'}}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+              {about}
               </Typography>
             </div>
 
             <div style={{marginTop:'30px'}}>
                 <Box style={{borderTop:'1px solid lightgray'}}>
                   <Typography variant="subtitle1" style={{textAlign:'left',marginTop:'6px',marginBottom:'6px',marginLeft:'6px'}} ><EditIcon style={{fontSize:'20px',marginRight:'4px',marginBottom:'-4px'}} />
- Edit Profile</Typography>
+                     <Link to='/EditProfile' style={{textDecoration:'none',color:'black'}}>Edit Profile</Link></Typography>
                 </Box>
                 <Box style={{borderTop:'1px solid lightgray',borderBottom:'1px solid lightgray'}}>
                   <Typography variant="subtitle1" style={{textAlign:'left',marginTop:'6px',marginBottom:'6px',marginLeft:'6px'}} > <LocationOnIcon style={{fontSize:'20px',marginBottom:'-4px',marginRight:'4px'}} />Adderess</Typography>

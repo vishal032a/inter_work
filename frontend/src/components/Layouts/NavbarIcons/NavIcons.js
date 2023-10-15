@@ -12,8 +12,7 @@ const  NavIcons= () => {
   }, []);
 
   const handleLogout = () => {
-
-    localStorage.removeItem('username');
+    localStorage.clear();
     setIsLoggedIn(false);
     navigate('/');
   };
